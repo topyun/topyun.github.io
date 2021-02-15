@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-02-13T14:46:17.197Z</updated>
+  <updated>2021-02-15T07:06:43.960Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开篇词</title>
+    <link href="http://example.com/2021/02/15/%E5%BC%80%E7%AF%87%E8%AF%8D/"/>
+    <id>http://example.com/2021/02/15/%E5%BC%80%E7%AF%87%E8%AF%8D/</id>
+    <published>2021-02-15T07:03:21.000Z</published>
+    <updated>2021-02-15T07:06:43.960Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="还是想太多"><a href="#还是想太多" class="headerlink" title="还是想太多"></a>还是想太多</h3><p>日子还是要过的，梦想总该有，放心里就好了，生活已经给你一大巴掌了，总该长点记性，比别人在象牙塔多混三年，也是时候出来撞南墙了，不能让人差得太远，不能输！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;还是想太多&quot;&gt;&lt;a href=&quot;#还是想太多&quot; class=&quot;headerlink&quot; title=&quot;还是想太多&quot;&gt;&lt;/a&gt;还是想太多&lt;/h3&gt;&lt;p&gt;日子还是要过的，梦想总该有，放心里就好了，生活已经给你一大巴掌了，总该长点记性，比别人在象牙塔多混三年，也是时候出来</summary>
+      
+    
+    
+    
+    
+    <category term="杂项" scheme="http://example.com/tags/%E6%9D%82%E9%A1%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My New Posts</title>
+    <link href="http://example.com/2021/02/14/My-New-Posts/"/>
+    <id>http://example.com/2021/02/14/My-New-Posts/</id>
+    <published>2021-02-13T16:19:02.000Z</published>
+    <updated>2021-02-13T16:19:02.677Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>My next Post</title>
