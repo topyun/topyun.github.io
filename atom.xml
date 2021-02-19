@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-02-15T07:16:17.341Z</updated>
+  <updated>2021-02-18T16:16:18.429Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux终端每次需要更新source \~/bashrc</title>
+    <link href="http://example.com/2021/02/18/linux%E7%BB%88%E7%AB%AF%E6%AF%8F%E6%AC%A1%E9%9C%80%E8%A6%81%E6%9B%B4%E6%96%B0source%20bashrc/"/>
+    <id>http://example.com/2021/02/18/linux%E7%BB%88%E7%AB%AF%E6%AF%8F%E6%AC%A1%E9%9C%80%E8%A6%81%E6%9B%B4%E6%96%B0source%20bashrc/</id>
+    <published>2021-02-18T14:01:12.000Z</published>
+    <updated>2021-02-18T16:16:18.429Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>通过ssh连接linux打开终端时，由于需要设定的环境，每次都要执行source ~/bashrc以更新当前环境</p></blockquote><h4 id="一、-bashrc"><a href="#一、-bashrc" class="headerlink" title="一、.bashrc"></a>一、.bashrc</h4><p>.bashrc是home目录下的一个shell文件，用于储存用户的个性化设置，比如个性化指令，设定环境路径或设置提示符等。在bash每次启动时都会加载.bashrc文件中的内容，并根据内容定制当前bash的配置和环境。</p><h4 id="二、配置文件的作用域"><a href="#二、配置文件的作用域" class="headerlink" title="二、配置文件的作用域"></a>二、配置文件的作用域</h4><ul><li><p>/etc/profile：<br>此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行. 并从/etc/profile.d目录的配置文件中搜集shell的设置。</p></li><li><p>/etc/bashrc:<br>为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取（即每次新开一个终端，都会执行bashrc）。</p></li><li><p>~/.bash_profile:<br>每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次。默认情况下,设置一些环境变量,执行用户的.bashrc文件。</p></li><li><p>~/.bashrc:<br>该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该该文件被读取。</p></li><li><p>~/.bash_logout:<br>当每次退出系统(退出bash shell)时,执行该文件. 另外,/etc/profile中设定的变量(全局)的可以作用于任何用户,而~/.bashrc等中设定的变量(局部)只能继承 /etc/profile中的变量,他们是”父子”关系。</p></li><li><p>~/.bash_profile:<br>是交互式、login 方式进入 bash 运行的~/.bashrc 是交互式 non-login 方式进入 bash 运行的通常二者设置大致相同，所以通常前者会调用后者。</p></li></ul><h4 id="三、Linux启动时读取配置文件的顺序"><a href="#三、Linux启动时读取配置文件的顺序" class="headerlink" title="三、Linux启动时读取配置文件的顺序"></a>三、Linux启动时读取配置文件的顺序</h4><p>在登录Linux时，首先启动<strong>/etc/profile</strong> 文件，然后再启动用户目录下的<strong>~/.bash_profile</strong>、<strong>~/.bash_login</strong>或 <strong>~/.profile</strong>文件中的其中一个，执行的顺序为：<strong>~/.bash_profile</strong>、<strong>~/.bash_login</strong>、 <strong>~/.profile</strong>，如果<strong>~/.bash_profile</strong>文件存在的话，一般还会执行 <strong>~/.bashrc</strong>文件。</p><ul><li><strong>所以，这些配置文件的执行顺序为</strong>：<strong>/etc/profile</strong> → (<strong>~/.bash_profile</strong> | <strong>~/.bash_login</strong> | <strong>~/.profile</strong>)→ <strong>~/.bashrc</strong> →<strong>/etc/bashrc</strong> → <strong>~/.bash_logout</strong></li></ul><h4 id="四、解决方法"><a href="#四、解决方法" class="headerlink" title="四、解决方法"></a>四、解决方法</h4><p>由于用户目录下的(<strong>~/.bash_profile</strong> | <strong>~/.bash_login</strong> | <strong>~/.profile</strong>)文件不存在，那么，依赖这些文件启动的配置就失效，每次登陆终端都要手动输入source ~/.bashrc。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如在~&#x2F;.bash_profile文件中没有下面的代码</span><br><span class="line">if [ -f ~&#x2F;.bashrc ];  then </span><br><span class="line">        source .bashrc</span><br><span class="line">fi </span><br></pre></td></tr></table></figure><p><strong>所以</strong>，解决方法就直接<code>vi</code>生成.bash_profile文件，并写入<code>source .bashrc</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if [-f .bashrc ]; then</span><br><span class="line">source .bashrc </span><br><span class="line">fi</span><br></pre></td></tr></table></figure><p>之后，打开新终端可以自动执行source ~/.bashrc更新环境。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;通过ssh连接linux打开终端时，由于需要设定的环境，每次都要执行source ~/bashrc以更新当前环境&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;一、-bashrc&quot;&gt;&lt;a href=&quot;#一、-bashrc&quot; class=&quot;he</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>python的mixin模式</title>
