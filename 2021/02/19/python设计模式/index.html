@@ -200,13 +200,21 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                
+                <blockquote>
+<p>python设计模式相关</p>
+</blockquote>
+<h4 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># 装饰器方法</span><br><span class="line">def singleton(cls):</span><br><span class="line">	instances &#x3D; &#123;&#125;</span><br><span class="line">	def wraper(*agrs,**kwargs):</span><br><span class="line">		if cls not in instaces:</span><br><span class="line">			isntances[cls] &#x3D; cls(*agrs,**kwargs)</span><br><span class="line">		return instances[cls]</span><br><span class="line">	return wraper</span><br><span class="line"></span><br><span class="line">@singleton</span><br><span class="line">class Foo:</span><br><span class="line">	pass</span><br><span class="line"></span><br><span class="line">--------------------------------------------------</span><br><span class="line"></span><br><span class="line"># new方法</span><br><span class="line">class Singleton:</span><br><span class="line">	def __new__(cls,*args,**kwargs):</span><br><span class="line">		if not hasattr(cls,&#39;_instance&#39;):</span><br><span class="line">			cls._instance &#x3D; super(Singleton,cls).__new__(cls,*args,**kwargs)</span><br><span class="line">		return cls._instance</span><br><span class="line"></span><br><span class="line">class Foo(Singleton):</span><br><span class="line">	pass</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
                 <hr>
 
                 
 
                 <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2021/02/20/flask蓝图/" data-toggle="tooltip" data-placement="top" title="flask蓝图">&larr; Previous Post</a>
+                        </li>
                     
                     
                         <li class="next">
