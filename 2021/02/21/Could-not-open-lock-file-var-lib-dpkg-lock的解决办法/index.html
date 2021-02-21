@@ -13,11 +13,11 @@
 
     <title>
         
-          小蓝 | SmallBlue
+          Could not open lock file/var/lib/dpkg/lock的解决办法 - 小蓝 | SmallBlue
         
     </title>
 
-    <link rel="canonical" href="http://example.com/archive/2021/02/20/">
+    <link rel="canonical" href="http://example.com/2021/02/21/Could-not-open-lock-file-var-lib-dpkg-lock的解决办法/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -154,7 +154,106 @@
 
 
     <!-- Main Content -->
-    <!-- Default Archive layout, we use archives instead. -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#linux" title="linux">linux</a>
+                        
+                    </div>
+                    <h1>Could not open lock file/var/lib/dpkg/lock的解决办法</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by xiaolan on
+                        2021-02-21
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>在ubuntu系统中利用apt-get install xxx的时候，有时候会出现无法获得锁的权限问题。这是因为有另外一个进程在占用锁。类似以下的错误提示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E: Could not open lock file &#x2F;var&#x2F;lib&#x2F;dpkg&#x2F;lock-frontend - open (13: Permission denied)</span><br><span class="line">E: Unable to acquire the dpkg frontend lock (&#x2F;var&#x2F;lib&#x2F;dpkg&#x2F;lock-frontend), are you root?</span><br></pre></td></tr></table></figure>
+<p><strong>可能原因</strong>：<br>之前也用apt-get命令安装某个资源但是没有安装完就关闭terminal了，再次打开时导致了另外一个进程正在占用 apt-get install 进程。由于在运行时，会占用软件源更新时的系统锁，此时就会发生报错。</p>
+<p><strong>解决</strong><br>依次运行下列4条命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf &#x2F;var&#x2F;lib&#x2F;dpkg&#x2F;lock</span><br><span class="line">sudo rm -rf &#x2F;var&#x2F;cache&#x2F;apt&#x2F;archives&#x2F;lock</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo dpkg --configure -a</span><br></pre></td></tr></table></figure>
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2021/02/21/linux连接/" data-toggle="tooltip" data-placement="top" title="linux连接文件">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2021/02/20/面试-tcp协议/" data-toggle="tooltip" data-placement="top" title="面试-tcp协议">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
 
     <!-- Footer -->
     <!-- Footer -->
