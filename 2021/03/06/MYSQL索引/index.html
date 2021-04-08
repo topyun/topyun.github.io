@@ -13,11 +13,11 @@
 
     <title>
         
-          小蓝 | SmallBlue
+          MYSQL索引 - 小蓝 | SmallBlue
         
     </title>
 
-    <link rel="canonical" href="http://example.com/page/2/">
+    <link rel="canonical" href="http://example.com/2021/03/06/MYSQL索引/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -154,234 +154,118 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://example.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>SmallBlue</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">less is more</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#面试" title="面试">面试</a>
+                        
+                          <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
+                        
+                    </div>
+                    <h1>MYSQL索引</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by xiaolan on
+                        2021-03-06
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
-
-<div class="post-preview">
-
-    <a href="/2021/02/14/My-New-Posts/">
-        <h2 class="post-title">
-            My New Posts
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            ...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by xiaolan on
-        2021-02-14
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/02/13/My-next-Post-2/">
-        <h2 class="post-title">
-            My next Post
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            hahahaha
-fff 
-
-...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by xiaolan on
-        2021-02-13
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/02/13/My-next-Post-1/">
-        <h2 class="post-title">
-            My next Post
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            ...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by xiaolan on
-        2021-02-13
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/02/13/My-next-Post/">
-        <h2 class="post-title">
-            My next Post
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            ...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by xiaolan on
-        2021-02-13
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/02/13/My-New-Post/">
-        <h2 class="post-title">
-            My New Post
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            ...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by xiaolan on
-        2021-02-13
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2021/02/11/hello-world/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by xiaolan on
-        2021-02-11
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-        <li class="previous">
-            <a href="/">&larr; Newer Posts</a>
-        </li>
-    
-    
+                <h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>索引是，索引有助于更快地获取信息，加快数据的检索速度，保证表中数据的唯一性，加快表之间的连接，但是，需要占用数据表以外的物理存储空间，创建索引和维护索引要花费一定的时间，当对表进行更新操作时，索引需要被重建，这样降低了数据的维护速度。</p>
+<h4 id="索引类型"><a href="#索引类型" class="headerlink" title="索引类型"></a>索引类型</h4><ul>
+<li><p>普通索引<br>基本普通索引，无限制<br><code>create index indexname on table (a) </code></p>
+</li>
+<li><p>唯一性索引<br>基本普通索引，索引列唯一，允许空值<br><code>create ubique index indexname on table(a)</code></p>
+</li>
+<li><p>主键索引<br>特殊的唯一索引，不允许空值</p>
+</li>
+<li><p>聚集索引<br>聚集索引是指索引序列与表中行的排列顺序一致，表中行的物理顺序与键值的逻辑（索引）顺序相同<br>由于主键的作用是将表数据格式转换成平衡树的格式存放，所以一个表只能有一个主键，一个表只能有一个聚集索引<br>建议使用聚集索引的情况：<br>a. 此列包含有限数目的不同值；<br>b. 查询的结果返回一个区间的值；<br>c. 查询的结果返回某值相同的大量结果集</p>
+</li>
+<li><p>非聚集索引（辅助索引）<br>非聚集索引是指索引序列与表中行的排列顺序不一致，聚集索引和非聚集索引都采用了B+树的结构，但非聚集索引的叶子层并不与实际的数据页相重叠，而采用叶子层包含一个指向表中的记录在数据页中的指针的方式。<br>建议使用非聚集索引的情况：<br>a. 此列包含了大量数目不同的值；<br>b. 查询的结束返回的是少量的结果集；<br>c. order by 子句中使用了该列。</p>
+</li>
+<li><p>联合索引<br>多个字段上建立的索引，能够加速复合查询条件的检索（最左原则）</p>
+</li>
+<li><p>覆盖索引<br>查询字段为索引，查询性能最佳</p>
+</li>
 </ul>
+<h4 id="索引失效"><a href="#索引失效" class="headerlink" title="索引失效"></a>索引失效</h4><p>1.查询条件中有<code>or</code><br>2.联合索引中未用前导列<br>3.<code>like</code>查询以<code>%</code>开头<br>4.全表扫描比索引要快</p>
+<h4 id="建立索引的原则"><a href="#建立索引的原则" class="headerlink" title="建立索引的原则"></a>建立索引的原则</h4><p>在最频繁使用、用以缩小查询范围、需要排序的字段 YES<br>对于查询中很少涉及的字段或者重复值比较多、特殊数据类型的字段 NO</p>
 
 
+                <hr>
 
-                <!-- 如果开启评论功能 -->
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2021/02/21/linux连接/" data-toggle="tooltip" data-placement="top" title="linux连接文件">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
                 
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                            
-
-                            
-
-                            
-
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+
+
+
 
 
     <!-- Footer -->
