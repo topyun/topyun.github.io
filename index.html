@@ -220,9 +220,9 @@
             
         </h3>
         <div class="post-content-preview">
-            装饰器函数在被装饰函数定义之后就立即加载执行了def outer(f):    def iner():        ret = f()        return ret    return iner
+            python装饰器先于被装饰函数执行装饰器函数在被装饰函数定义之后就立即加载执行了def outer(f):    def iner():        ret = f()        return ret    return iner
 @ouoterdef f():    print(‘hi’)其中f()等价于f() == outer(iner(f))()    
-12345678910111213141516171819......
+12345678910......
         </div>
     </a>
     <p class="post-meta">
