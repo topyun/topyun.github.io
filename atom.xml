@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-04-13T17:17:22.448Z</updated>
+  <updated>2021-06-10T13:32:21.256Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>收收心，打工去</title>
+    <link href="http://example.com/2021/06/10/%E6%94%B6%E6%94%B6%E5%BF%83%EF%BC%8C%E6%89%93%E5%B7%A5%E5%8E%BB/"/>
+    <id>http://example.com/2021/06/10/%E6%94%B6%E6%94%B6%E5%BF%83%EF%BC%8C%E6%89%93%E5%B7%A5%E5%8E%BB/</id>
+    <published>2021-06-10T13:32:21.000Z</published>
+    <updated>2021-06-10T13:32:21.256Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>python全局解释所GIL</title>
